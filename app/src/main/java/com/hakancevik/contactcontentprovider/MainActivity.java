@@ -9,8 +9,6 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.location.Location;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -28,10 +26,6 @@ import android.view.View;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.hakancevik.contactcontentprovider.databinding.ActivityMainBinding;
 
@@ -148,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 if (getRequestCount >= 2 && (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)) {
 
                     Dialog dialog = new Dialog(MainActivity.this);
-                    dialog.setContentView(R.layout.popup_go_settings);
+                    dialog.setContentView(R.layout.popup_open_settings);
                     dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                     TextView popupAllowAccessButton = dialog.findViewById(R.id.popupAllowAccessButton);
@@ -213,7 +207,8 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     //permission denied
-                    Toast.makeText(MainActivity.this, "Permission needed!", Toast.LENGTH_SHORT).show();
+
+                    //Toast.makeText(MainActivity.this, "Permission needed!", Toast.LENGTH_SHORT).show();
                     requestCount++;
                     sharedPreferences.edit().putInt("requestCount", requestCount).apply();
 

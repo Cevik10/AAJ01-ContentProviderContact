@@ -38,15 +38,15 @@
         android:id="@+id/popupAllowAccessButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Allow Access"
-        android:textAlignment="center"
-        android:background="@drawable/popup_allow_access_background"
-
-        android:layout_marginBottom="7dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_gravity="center"
-        android:textColor="#6A9DDC">
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/popup_open_settings_button_background"
+
+        android:text="Open Settings"
+        android:textAlignment="center"
+        android:textColor="#6A9DDC"
+        android:textSize="16sp"
+        android:textStyle="bold">
 
     </TextView>
 
